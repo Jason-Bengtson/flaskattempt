@@ -19,8 +19,8 @@ class Todo(db.Model):
 
 @app.route('/')
 #def index():
-    
-def generation(file_name):
+
+def generation():
     file_name = ('/Users/mrfur/Desktop/494/env/namesfixed.csv')
     infile = open(file_name, 'r')
     first = infile.readline()
@@ -32,7 +32,7 @@ def generation(file_name):
         if z == x:
             break
     name = cells[0]
-    return render_template('index.html', name = name)
+    return render_template('index.html', name=name)
     #print(name)
 #generation('/Users/mrfur/Desktop/494/env/namesfixed.csv')
 
@@ -40,7 +40,19 @@ def generation(file_name):
 
 @app.route("/about")
 def about():
-    return render_template('about.html')
+    file_name = ('/Users/mrfur/Desktop/494/env/namesfixed.csv')
+    infile = open(file_name, 'r')
+    first = infile.readline()
+    x = random.randint(1,560)
+    z = 0
+    for line in infile:
+        z += 1
+        cells = line.split(',')
+        if z == x:
+            break
+    name = cells[0]
+    return render_template('index.html', name=name)
+
     
 
 if __name__ == "__main__":
