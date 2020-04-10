@@ -2,14 +2,28 @@
 
 {% block head %}
 
-
 {% endblock %}
 
-
 {% block body %}
-<h1>Fantasy Name Generator 5000</h1>
 
-<h2>This is the about page</h2>
+
+<div class="content">
+    <h1>Fantasy Name Generator 5000</h1>
+    <h2>This is the about page</h2>
+
+    <table class="center">
+        <tr>
+            <th>Your randomly Generated Name!</th>
+
+        </tr>
+        <tr>
+            <td>
+                <button onclick="window.location.href = 'http://127.0.0.1:5000/';">New Name</button>
+                <br>
+            </td>
+        </tr>
+    </table>
+</div>
 
 
 {% endblock %}
